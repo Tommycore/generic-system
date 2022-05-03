@@ -1,0 +1,22 @@
+{
+  "Actor": {
+    "types": [
+      "character"
+    ],
+    "character": {
+      "activeLayer": "phys"
+    }
+  },
+  "Item": {
+    "types": [
+      "action",
+      "generic_item"
+    ],
+    "templates": {},
+    "action": {
+      "key": "",
+      "label": ""
+    },
+    "generic_item": {}
+  }
+}

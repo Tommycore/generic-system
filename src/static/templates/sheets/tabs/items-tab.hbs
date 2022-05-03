@@ -1,0 +1,14 @@
+<div class="tab" data-group="primary" data-tab="items">
+  <ul>
+    {{#each inventory}}
+      <li data-id="{{id}}">
+        <input class="inventory-toggle inline-toggle" type="checkbox" id="{{uuid}}-toggle" {{checked data.flags.srae.isEquipped}} />
+        <label class="inline-toggle" for="{{uuid}}-toggle">
+          <i class="{{#if data.flags.srae.isEquipped}}far fa-dot-circle{{else}}far fa-circle{{/if}}"></i>
+          &nbsp;{{name}}
+        </label>
+        <a class="edit-item"><i class="far fa-edit"></i></a>
+      </li>
+    {{/each}}
+  </ul>
+</div>

@@ -1,0 +1,55 @@
+// Font faces
+@font-face {
+  font-family: Roboto;
+  src: url('./assets/fonts/RobotoCondensed-Light.ttf');
+}
+
+@font-face {
+  font-family: Shadowrun;
+  src: url('./assets/fonts/Shadowrun.ttf');
+}
+
+// Colours
+$text-col: white;
+$text-col2: #8d8d8d;
+$text-col-inv: black;
+$bg-col-solid: black;
+$bg-col: rgba(0, 0, 0, 0.7);
+$bg-col2: rgba(50, 50, 50, 0.25);
+$bg-col-inv: rgba(255, 255, 255, 0.8);
+$header-group-col: rgba(255, 255, 255, 0.1);
+
+// Fonts
+$base-font: Roboto, sans-serif;
+$header-font: Shadowrun, sans-serif;
+
+// - Sizes
+$inline-height: 1.25rem;
+
+// Borders
+$header-border: solid 0.1rem #444;
+$border: solid 0.1rem $text-col2;
+
+@mixin basic-element {
+  color: $text-col;
+  background-color: $bg-col;
+  background-image: none;
+  font-family: $base-font;
+}
+
+@mixin borderedAndHovFoc {
+  border: $border;
+
+  &:hover,
+  &:focus {
+    background-color: $bg-col-inv;
+    border: $border;
+    box-shadow: none;
+    color: $text-col-inv;
+  }
+}
+
+@mixin basic-button {
+  @include basic-element;
+  @include borderedAndHovFoc;
+}

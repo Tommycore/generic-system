@@ -1,0 +1,32 @@
+{
+  "name": "srae",
+  "title": "Shadowrun: Assindia Edition",
+  "description": "",
+  "version": "0.0.0",
+  "author": "Tommycore",
+  "minimumCoreVersion": "10",
+  "compatibleCoreVersion": "10",
+  "scripts": [],
+  "esmodules": [
+    "module/srae.mjs"
+  ],
+  "styles": [
+    "srae.css"
+  ],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/de.json"
+    }
+  ],
+  "initiative": "0",
+  "gridDistance": 1,
+  "gridUnits": "m"
+}

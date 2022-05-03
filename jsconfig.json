@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "types": ["@league-of-foundry-developers/foundry-vtt-types"],
+    "moduleResolution": "node",
+    "strictNullChecks": true,
+    "checkJs": true,
+    "target": "ES2020"
+  },
+  "exclude": ["gulpfile.js", "node_modules", "build"]
+}

@@ -1,0 +1,17 @@
+<div class="tab flexcol" data-group="primary" data-tab="stats">
+  <ul>
+    {{#each data.data.stats}}
+      <li class="flexrow stat-list-item">
+        <input type="text" name="data.stats.{{@index}}.label" placeholder="label" value="{{label}}" />
+        <p class="slug">{{slugify label}}</p>
+        <input type="text" name="data.stats.{{@index}}.value" placeholder="value" value="{{value}}" />
+        <input style="display: none" type="checkbox" name="data.stats.{{@index}}.propagate" id="{{@root.item.uuid}}-data.stats.{{@index}}.propagate" {{checked propagate}} />
+        <label class="inline-icon inline-toggle" for="{{@root.item.uuid}}-data.stats.{{@index}}.propagate">
+          <i class="fas fa-{{#if propagate}}user{{else}}suitcase{{/if}}"></i>
+        </label>
+        <a class="stat-ctrl inline-icon" data-action="removeStat" data-index="{{@index}}"><i class="far fa-trash-alt"></i></a>
+      </li>
+    {{/each}}
+  </ul>
+  <a class="stat-ctrl sheet-btn side-button" data-action="addStat">{{localize "SRAE.SHEETS.ACTIONS.ADD_STAT"}}</a>
+</div>

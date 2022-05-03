@@ -1,0 +1,27 @@
+<div class="tab flexcol" data-group="primary" data-tab="stats">
+  {{#with (rollData document)}}
+    <h2>Charakter</h2>
+    <ul>
+      {{#each actor}}
+        <li class="flexrow stat-list-item">
+          <p>{{label}}</p>
+          <p class="slug">{{slugify label}}</p>
+          <p title="{{#each sources}}{{this}}&#10;{{/each}}">{{value}}</p>
+        </li>
+      {{/each}}
+    </ul>
+    <h2>Items</h2>
+      {{#each items}}
+      <h3>{{label}}</h3>
+      <ul>
+        {{#each stats}}
+          <li class="flexrow stat-list-item">
+            <p>{{label}}</p>
+            <p class="slug">{{slugify label}}</p>
+            <p>{{value}}</p>
+          </li>
+        {{/each}}
+      </ul>
+    {{/each}}
+  {{/with}}
+</div>
