@@ -1,0 +1,24 @@
+{
+  "GS": {
+    "SHEETS": {
+      "ACTIONS": {
+        "ADD_STAT": "Add Stat"
+      },
+      "LABELS": {
+        "NEW_STAT": "New Stat",
+        "STATS": "Stats"
+      },
+      "TABS": {
+        "ITEMS": "Items",
+        "NOTES": "Notes",
+        "STATS": "Stats",
+        "TESTS": "Tests"
+      },
+      "TYPES": {
+        "ITEM": "Standard Itemsheet"
+      }
+    }
+  },
+  "ITEM.TypeAction": "Action",
+  "ITEM.TypeGeneric_item": "Generic Item"
+}

@@ -1,18 +1,12 @@
 {
-  "SRAE": {
+  "GS": {
     "SHEETS": {
       "ACTIONS": {
-        "ADD_STAT": "Wert hinzufügen",
-        "CANCEL": "Abbrechen",
-        "CONFIRM_REMOVE_MSG": "Willst du '{label}' wirklich löschen? Dieser Schritt kann nicht rückgängig gemacht werden.",
-        "CONFIRM_REMOVE": "Löschen",
-        "EDIT_FORMULA": "Formel ändern",
-        "REMOVE": "Löschen",
-        "REMOVE_STAT": "Wert löschen",
-        "RENAME_STAT": "Wert umbennen"
+        "ADD_STAT": "Wert hinzufügen"
       },
       "LABELS": {
-        "NEW_STAT": "Neuer Wert"
+        "NEW_STAT": "Neuer Wert",
+        "STATS": "Werte"
       },
       "TABS": {
         "ITEMS": "Items",
@@ -20,17 +14,11 @@
         "STATS": "Werte",
         "TESTS": "Proben"
       },
-      "TYPES":
-      {
-        "ACTOR": "SR:AE Charakterbogen",
-        "ITEM": "SR:AE Itembogen"
+      "TYPES": {
+        "ITEM": "Standard Itembogen"
       }
-    },
-    "DOCUMENT_TYPES": {
-      "GENERIC_ITEM": "Generisches Item"
     }
   },
   "ITEM.TypeAction": "Aktion",
-  "ITEM.TypeGeneric_item": "Generisches Item",
-  "ACTOR.TypeCharacter": "Charakter"
+  "ITEM.TypeGeneric_item": "Generisches Item"
 }

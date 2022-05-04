@@ -12,41 +12,36 @@ const path = require('path');
 async function buildCSS() {
   return src('./src/styles/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(concat('srae.css'))
+    .pipe(concat('gs.css'))
     .pipe(cleanCSS())
     .pipe(dest('./build'));
 };
 
-async function buildTemplateList()
-{
+async function buildTemplateList() {
   return src('./src/static/templates/**/*.hbs')
-    .pipe(rename(filePath => filePath.dirname = path.join('systems/srae/templates', filePath.dirname)))
+    .pipe(rename(filePath => filePath.dirname = path.join('systems/gs/templates', filePath.dirname)))
     .pipe(filelist('templateList.json', { relative: true }))
     .pipe(dest('build/data'));
 }
 
-async function copyImages()
-{
+async function copyImages() {
   return src(['./src/img/**/*.png', './src/img/**/*.jpg', './src/img/**/*.tiff'])
-    .pipe(webp({quality: 90, alphaQuality: 100, method: 6, metadata: 'icc'}))
+    .pipe(webp({ quality: 90, alphaQuality: 100, method: 6, metadata: 'icc' }))
     .pipe(dest('./build/assets/img'));
 }
 
-async function clean()
-{
+async function clean() {
   return del(['build/**', '!build']);
 }
 
-async function copyStatic()
-{
+async function copyStatic() {
   return src('./src/static/**')
     .pipe(dest('./build'));
 }
 
 // ---------------------------------------------------------------------
 
-async function buildWatch()
-{
+async function buildWatch() {
   watch('src/styles/**/*.scss', { ignoreInitial: false }, buildCSS);
   watch('src/img/**', { ignoreInitial: false }, copyImages);
   watch('src/static/**', { ignoreInitial: false }, copyStatic);

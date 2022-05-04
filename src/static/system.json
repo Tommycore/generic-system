@@ -1,6 +1,6 @@
 {
-  "name": "srae",
-  "title": "Shadowrun: Assindia Edition",
+  "name": "gs",
+  "title": "Generic System",
   "description": "",
   "version": "0.0.0",
   "author": "Tommycore",
@@ -8,10 +8,10 @@
   "compatibleCoreVersion": "10",
   "scripts": [],
   "esmodules": [
-    "module/srae.mjs"
+    "module/gs.mjs"
   ],
   "styles": [
-    "srae.css"
+    "gs.css"
   ],
   "packs": [],
   "languages": [
@@ -23,7 +23,7 @@
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/de.json"
+      "path": "lang/en.json"
     }
   ],
   "initiative": "0",
