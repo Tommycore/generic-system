@@ -4,10 +4,8 @@ export class GsHandlebarsHelper {
   static registerHelpers() {
     Handlebars.registerHelper("slugify", hbh_slugify);
     Handlebars.registerHelper("concat2", hbh_concat);
-    // Handlebars.registerHelper("keycap", hbh_key_capitalisation);
-    // Handlebars.registerHelper("hasCustomTab", hbh_hasCustomTab);
-    // Handlebars.registerHelper("rollData", hbh_rollData);
     Handlebars.registerHelper("template", hbh_getTemplate);
+    Handlebars.registerHelper("keyFromStat", hbh_getKeyFromStat);
   }
 }
 
@@ -25,18 +23,10 @@ function hbh_concat(...input) {
   });
 }
 
-// function hbh_key_capitalisation(key) {
-//   return key.toUpperCase().replace("-", "_");
-// }
-
-// function hbh_hasCustomTab(type) {
-//   return !["action", "generic_item"].includes(type);
-// }
-
-// function hbh_rollData(document) {
-//   return document.getRollData();
-// }
-
 function hbh_getTemplate(path) {
   return `${CONFIG.TEMPLATE_DIR}${path}`;
+}
+
+function hbh_getKeyFromStat(stat) {
+  return stat.key || slugify(stat.label);
 }

@@ -1,1 +1,14 @@
-@use '_variables'as *;
+@use '_variables' as *;
+
+.inline-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-inline-header {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}

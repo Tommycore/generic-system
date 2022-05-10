@@ -1,0 +1,7 @@
+<div class="tab flexcol" data-group="primary" data-tab="summary">
+  <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}" /></h1>
+  <p>{{localize "GS.SHEETS.LABELS.STATS"}}:</p>
+  {{#each document.system.stats}}
+  <p>{{label}} ({{keyFromStat this}}): {{value}}</p>
+  {{/each}}
+</div>

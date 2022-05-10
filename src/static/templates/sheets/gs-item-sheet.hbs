@@ -1,13 +1,7 @@
 <form class="{{cssClass}}" autocomplete="off">
 
-  <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}" /></h1>
-  <p>Type: {{item.type}}</p>
-  <p>{{localize "GS.SHEETS.LABELS.STATS"}}:</p>
-  {{#each document.system.stats}}
-  <p>{{@index}}. Key: {{key}}, Value: {{value}}</p>
-  {{/each}}
-
   <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="summary">{{localize "GS.SHEETS.TABS.SUMMARY"}}</a>
     <a class="item" data-tab="stats">{{localize "GS.SHEETS.TABS.STATS"}}</a>
     <a class="item" data-tab="tests">{{localize "GS.SHEETS.TABS.TESTS"}}</a>
     <a class="item" data-tab="notes">{{localize "GS.SHEETS.TABS.NOTES"}}</a>
@@ -15,6 +9,7 @@
 
   <section class="sheet-body">
     {{> (template "sheets/tabs/item-stats-tab.hbs")}}
+    {{> (template "sheets/tabs/summary-tab.hbs")}}
     {{> (template "sheets/tabs/tests-tab.hbs")}}
     {{> (template "sheets/tabs/notes-tab.hbs")}}
   </section>

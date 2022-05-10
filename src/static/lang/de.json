@@ -6,12 +6,17 @@
       },
       "LABELS": {
         "NEW_STAT": "Neuer Wert",
-        "STATS": "Werte"
+        "KEY": "Schlüssel",
+        "LABEL": "Bezeichnung",
+        "STAT": "Wert",
+        "STATS": "Werte",
+        "VALUE": "Inhalt"
       },
       "TABS": {
         "ITEMS": "Items",
         "NOTES": "Notizen",
         "STATS": "Werte",
+        "SUMMARY": "Zusammenfassung",
         "TESTS": "Proben"
       },
       "TYPES": {

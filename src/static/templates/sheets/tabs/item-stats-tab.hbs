@@ -1,10 +1,16 @@
 <div class="tab flexcol" data-group="primary" data-tab="stats">
   <ul>
+    <li class="flexrow stat-list-item">
+      <p class="centered-inline-header">{{localize "GS.SHEETS.LABELS.LABEL"}}</p>
+      <p class="centered-inline-header">{{localize "GS.SHEETS.LABELS.KEY"}}</p>
+      <p class="centered-inline-header">{{localize "GS.SHEETS.LABELS.VALUE"}}</p>
+      <p>&nbsp;</p>
+    </li>
     {{#each document.system.stats}}
     <li class="flexrow stat-list-item">
-      <input type="text" name="system.stats[{{@index}}].key" placeholder="key" value="{{key}}" />
-      <p class="slug">{{slugify key}}</p>
-      <input type="text" name="system.stats[{{@index}}].value" placeholder="value" value="{{value}}" />
+      <input type="text" name="system.stats.{{@index}}.label" placeholder="label" value="{{label}}" />
+      <input type="text" name="system.stats.{{@index}}.key" placeholder="{{keyFromStat this}}" value="{{key}}" />
+      <input type="number" name="system.stats.{{@index}}.value" placeholder="value" value="{{value}}" />
       <a class="stat-ctrl inline-icon" data-action="removeStat" data-index="{{@index}}">
         <i class="far fa-trash-alt"></i>
       </a>

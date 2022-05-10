@@ -1,3 +1,5 @@
+import { GsItemModel } from "../documents/data/gs-item-data.mjs";
+
 export class GsItemSheet extends ItemSheet {
 
   static get defaultOptions() {
@@ -39,17 +41,20 @@ export class GsItemSheet extends ItemSheet {
   }
 
   _removeStat(index) {
-    ui.notifications.warn("Nope. Not implemented yet.");
-    //this.item.update({system: {stats: {[`-=${index}`]: null}}});
+    const stats = this.document.toObject().system.stats;
+    stats.splice(index, 1);
+    this.document.update({ "system.stats": stats });
   }
 
-  async _addStat() {
-    // NOTE: My reasoning here is that I want to create a new array element and then
-    // just tell Foundry "Hey, here's the updated version of the array."
-    this.document.system.stats.push({ key: "New Stat", value: 0 });
-    await this.document.update({ system: { stats: this.document.system.stats } });
+  _addStat() {
+    const stats = this.document.toObject().system.stats;
+    stats.push({ label: "New Stat", value: 0 });
+    this.document.update({ "system.stats": stats });
+  }
 
-    console.log(`GS | Validating item '${this.document.name}' after calling document.update() in _addStat().\n` +
-      ` Document appears to be ${this.document.validate() ? "valid" : "invalid"}.`);
+  _getSubmitData(updateData) {
+    const formData = super._getSubmitData(updateData);
+    formData.system = { stats: Array.from(Object.values(expandObject(formData).system.stats)) };
+    return formData;
   }
 }
